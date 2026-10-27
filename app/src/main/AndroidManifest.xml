@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Batch E: Photo solver requires internet access (for user-configured API). Does not request CAMERA permission -
+         delegates to system camera via MediaStore.ACTION_IMAGE_CAPTURE + FileProvider. -->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="false"
+        android:theme="@style/Theme.Fx991"
+        android:usesCleartextTraffic="true">
+
+        <!-- usesCleartextTraffic=true rationale: allows users to configure HTTP base URLs for local or self-hosted solving APIs.
+             The app only calls user-configured endpoints and does not have built-in cloud telemetry. -->
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:theme="@style/Theme.Fx991"
+            android:windowSoftInputMode="stateAlwaysHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Selected text -> Calculate: Entry in the system text selection menu.
+             Has no UI of its own; forwards text/plain to MainActivity and exits immediately. -->
+        <activity
+            android:name=".ProcessTextActivity"
+            android:exported="true"
+            android:noHistory="true"
+            android:excludeFromRecents="true"
+            android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <!-- Quick Settings tile: opens calculator in one tap -->
+        <service
+            android:name=".CalcTileService"
+            android:exported="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+        </service>
+
+        <!-- Photo solve: writes camera capture to app cache directory and reads it back (no CAMERA permission requested) -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="io.paimon.fx991.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light: light casing -->
+    <color name="calc_body">#FFE5E9EE</color>
+    <color name="calc_body_edge">#FFD2D8E0</color>
+</resources>

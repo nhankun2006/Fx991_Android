@@ -1,0 +1,17 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Foreground layer: pure vector-drawn calculator (no bitmaps, fonts, or trademarks) -->
+    <path
+        android:fillColor="#F2A23C"
+        android:pathData="M40,24 h28 a8,8 0 0 1 8,8 v44 a8,8 0 0 1 -8,8 h-28 a8,8 0 0 1 -8,-8 v-44 a8,8 0 0 1 8,-8 z" />
+    <path
+        android:fillColor="#101418"
+        android:pathData="M40.5,30 h27 a2.5,2.5 0 0 1 2.5,2.5 v10 a2.5,2.5 0 0 1 -2.5,2.5 h-27 a2.5,2.5 0 0 1 -2.5,-2.5 v-10 a2.5,2.5 0 0 1 2.5,-2.5 z" />
+    <!-- 3x3 circular buttons aligned with screen (38 / 70); rounded screen rx=2.5 -->
+    <path
+        android:fillColor="#101418"
+        android:pathData="M38,54.5 a4.5,4.5 0 1 0 9,0 a4.5,4.5 0 1 0 -9,0 z M49.5,54.5 a4.5,4.5 0 1 0 9,0 a4.5,4.5 0 1 0 -9,0 z M61,54.5 a4.5,4.5 0 1 0 9,0 a4.5,4.5 0 1 0 -9,0 z M38,65.5 a4.5,4.5 0 1 0 9,0 a4.5,4.5 0 1 0 -9,0 z M49.5,65.5 a4.5,4.5 0 1 0 9,0 a4.5,4.5 0 1 0 -9,0 z M61,65.5 a4.5,4.5 0 1 0 9,0 a4.5,4.5 0 1 0 -9,0 z M38,76.5 a4.5,4.5 0 1 0 9,0 a4.5,4.5 0 1 0 -9,0 z M49.5,76.5 a4.5,4.5 0 1 0 9,0 a4.5,4.5 0 1 0 -9,0 z M61,76.5 a4.5,4.5 0 1 0 9,0 a4.5,4.5 0 1 0 -9,0 z" />
+</vector>

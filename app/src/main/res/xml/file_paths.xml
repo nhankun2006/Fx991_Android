@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Photo solve: camera captures saved to cache directory photo/, read and compressed immediately -->
+<paths>
+    <cache-path name="photo" path="photo/" />
+</paths>

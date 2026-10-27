@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark theme (DayNight) -->
+    <style name="Theme.Fx991" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/calc_body</item>
+        <item name="android:statusBarColor">@color/calc_body_edge</item>
+        <item name="android:navigationBarColor">@color/calc_body_edge</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <!-- edge-to-edge: allows content to extend into cutout areas, insets handled by Compose safeDrawing insets (API 28+) -->
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+    </style>
+</resources>
